@@ -99,7 +99,7 @@ namespace Rance10ObjectViewer
             var data    = new byte[8];
 
             Array.Copy(BitConverter.GetBytes(999999), 0, data, 0, 4);   // AT
-            Array.Copy(BitConverter.GetBytes(123456), 0, data, 4, 4);   // HP
+            Array.Copy(BitConverter.GetBytes(999999), 0, data, 4, 4);   // HP
 
             foreach(var i in party.Leaders)
             {
@@ -145,8 +145,8 @@ namespace Rance10ObjectViewer
 
     public class ObjectBase
     {
-        public Rance10ObjectAnalyzer     Analyzer                { get; private set; }
-        public Rance10Object          BaseObject              { get; private set; }
+        public Rance10ObjectAnalyzer    Analyzer                { get; private set; }
+        public Rance10Object            BaseObject              { get; private set; }
 
         public ObjectBase(Rance10ObjectAnalyzer ana, Rance10Object obj)
         {
@@ -165,7 +165,7 @@ namespace Rance10ObjectViewer
 
     public class CommonParam : ObjectBase
     {
-        public Rance10Object         PlayerCommonParam       { get { return BaseObject; } }
+        public Rance10Object            PlayerCommonParam       { get { return BaseObject; } }
         public uint                     FriendshipPoint         { get { return PlayerCommonParam.ObjectData[2]; } }
         public uint                     TotalExp                { get { return PlayerCommonParam.ObjectData[7]; } }
         public uint                     DataAddress             { get { return PlayerCommonParam.DataPtr; } }
@@ -215,16 +215,16 @@ namespace Rance10ObjectViewer
         {
         }
 
-        public Rance10Object          SceneParty              { get { return BaseObject; } }
-        public Rance10Object          FormationViewGroup      { get { return Get(ref _FormationViewGroup,      SceneParty             .ObjectData[4]); } } private Rance10Object _FormationViewGroup;
-        public Rance10Object          FormationViewGroupItems { get { return Get(ref _FormationViewGroupItems, FormationViewGroup     .ObjectData[7]); } } private Rance10Object _FormationViewGroupItems;
-        public Rance10Object          FormationView0          { get { return Get(ref _FormationView0,          FormationViewGroupItems.ObjectData[0]); } } private Rance10Object _FormationView0;
-        public Rance10Object          FormationView1          { get { return Get(ref _FormationView1,          FormationViewGroupItems.ObjectData[1]); } } private Rance10Object _FormationView1;
-        public Rance10Object          FormationView2          { get { return Get(ref _FormationView2,          FormationViewGroupItems.ObjectData[2]); } } private Rance10Object _FormationView2;
-        public Rance10Object          FormationView3          { get { return Get(ref _FormationView3,          FormationViewGroupItems.ObjectData[3]); } } private Rance10Object _FormationView3;
-        public Rance10Object          FormationView4          { get { return Get(ref _FormationView4,          FormationViewGroupItems.ObjectData[4]); } } private Rance10Object _FormationView4;
-        public Rance10Object          FormationView5          { get { return Get(ref _FormationView5,          FormationViewGroupItems.ObjectData[5]); } } private Rance10Object _FormationView5;
-        public Rance10Object          FormationView6          { get { return Get(ref _FormationView6,          FormationViewGroupItems.ObjectData[6]); } } private Rance10Object _FormationView6;
+        public Rance10Object            SceneParty              { get { return BaseObject; } }
+        public Rance10Object            FormationViewGroup      { get { return Get(ref _FormationViewGroup,      SceneParty             .ObjectData[4]); } } private Rance10Object _FormationViewGroup;
+        public Rance10Object            FormationViewGroupItems { get { return Get(ref _FormationViewGroupItems, FormationViewGroup     .ObjectData[7]); } } private Rance10Object _FormationViewGroupItems;
+        public Rance10Object            FormationView0          { get { return Get(ref _FormationView0,          FormationViewGroupItems.ObjectData[0]); } } private Rance10Object _FormationView0;
+        public Rance10Object            FormationView1          { get { return Get(ref _FormationView1,          FormationViewGroupItems.ObjectData[1]); } } private Rance10Object _FormationView1;
+        public Rance10Object            FormationView2          { get { return Get(ref _FormationView2,          FormationViewGroupItems.ObjectData[2]); } } private Rance10Object _FormationView2;
+        public Rance10Object            FormationView3          { get { return Get(ref _FormationView3,          FormationViewGroupItems.ObjectData[3]); } } private Rance10Object _FormationView3;
+        public Rance10Object            FormationView4          { get { return Get(ref _FormationView4,          FormationViewGroupItems.ObjectData[4]); } } private Rance10Object _FormationView4;
+        public Rance10Object            FormationView5          { get { return Get(ref _FormationView5,          FormationViewGroupItems.ObjectData[5]); } } private Rance10Object _FormationView5;
+        public Rance10Object            FormationView6          { get { return Get(ref _FormationView6,          FormationViewGroupItems.ObjectData[6]); } } private Rance10Object _FormationView6;
 
         public List<Leader>             Leaders
         {
@@ -250,12 +250,12 @@ namespace Rance10ObjectViewer
 
     public class Leader : ObjectBase
     {
-        public Rance10Object          FormationView           { get { return BaseObject; } }
-        public Rance10Object          PlayerCard              { get { return Get(ref _PlayerCard,              FormationView          .ObjectData[2]); } } private Rance10Object _PlayerCard;
+        public Rance10Object            FormationView           { get { return BaseObject; } }
+        public Rance10Object            PlayerCard              { get { return Get(ref _PlayerCard,              FormationView          .ObjectData[2]); } } private Rance10Object _PlayerCard;
         public uint                     AT                      { get { return PlayerCard.ObjectData[0]; } }
         public uint                     HP                      { get { return PlayerCard.ObjectData[1]; } }
         public uint                     Rank                    { get { return PlayerCard.ObjectData[2]; } }
-        public Rance10Object          CardNameObject          { get { return Get(ref _CardNameObject,          PlayerCard             .ObjectData[9]); } } private Rance10Object _CardNameObject;
+        public Rance10Object            CardNameObject          { get { return Get(ref _CardNameObject,          PlayerCard             .ObjectData[9]); } } private Rance10Object _CardNameObject;
         public string                   CardName                { get { return CardNameObject.ValueString; } }
         public uint                     ParamAddress            { get { return PlayerCard.DataPtr; } }
 

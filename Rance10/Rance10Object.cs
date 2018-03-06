@@ -191,7 +191,7 @@ namespace Rance10ObjectViewer
 
     // type=0 vftbl=0x799024 size=44(0x2C)
     // 00000000 class_Object_0  struc ; (sizeof=0x2C, mappedto_121)
-    // 00000000 base            class_ObjectBase ?      ; functbl799024_obj0
+    // 00000000 base            class_ObjectBase ?      ; functbl_799024_obj0
     // 00000008 zero            dd ?
     // 0000000C functbl_1       dd ?                    ; offset
     // 00000010 data_ptr        dd ?
@@ -244,7 +244,7 @@ namespace Rance10ObjectViewer
         }
     }
 
-    // type=2 vftbl=0x798E74 size=40(0x24)
+    // type=2 vftbl=0x798E74 size=36(0x24)
     // 00000000 class_Object_2_String struc ; (sizeof=0x24, mappedto_114)
     // 00000000 base            class_ObjectBase ?      ; functbl_798E74_obj2_string
     // 00000008 zero            dd ?
@@ -344,7 +344,7 @@ namespace Rance10ObjectViewer
     // Image?
     //
     // type=5 vftbl=0x79843C size=52(0x34)
-    // 00000000 class_Object_5_Struct struc ; (sizeof=0x34, mappedto_120)
+    // 00000000 class_Object_5 struc ; (sizeof=0x34, mappedto_120)
     // 00000000 base            class_ObjectBase ?      ; functbl_79843C_obj5
     // 00000008 zero            dd ?
     // 0000000C functbl_1       dd ?                    ; offset
